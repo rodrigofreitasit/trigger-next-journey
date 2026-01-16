@@ -1,0 +1,89 @@
+{
+  "workflowApiVersion": "1.1",
+  "metaData": {
+    "icon": "trigger-next-journey/public/vite.svg",
+    "iconSmall": "trigger-next-journey/public/vite.svg",
+    "category": "message"
+  },
+  "type": "REST",
+  "lang": {
+    "en-US": {
+      "name": "Trigger Next Journey",
+      "description": "Send to next journey"
+    },
+    "pt-BR": {
+      "name": "Trigger Next Journey",
+      "description": "Envia para a próxima jornada"
+    }
+  },
+  "arguments": {
+    "execute": {
+      "executionMode": "{{Context.ExecutionMode}}",
+      "definitionId": "{{Context.DefinitionId}}",
+      "activityId": "{{Activity.Id}}",
+      "contactKey": "{{Context.ContactKey}}",
+      "inArguments": [],
+      "outArguments": [],
+      "url": "https://337fd80b6bcbda91f5fef78165e7dc30.m.pipedream.net/execute",
+      "verb": "POST",
+      "useJwt": false,
+      "concurrentRequests": 10,
+      "timeout": 10000,
+      "retryCount": 1,
+      "retryDelay": 10000
+    }
+  },
+  "configurationArguments": {
+    "save": {
+      "url": "https://337fd80b6bcbda91f5fef78165e7dc30.m.pipedream.net/save",
+      "verb": "POST",
+      "useJwt": false
+    },
+    "publish": {
+      "url": "https://337fd80b6bcbda91f5fef78165e7dc30.m.pipedream.net/publish",
+      "verb": "POST",
+      "useJwt": false
+    },
+    "validate": {
+      "url": "https://337fd80b6bcbda91f5fef78165e7dc30.m.pipedream.net/validate",
+      "verb": "POST",
+      "useJwt": false
+    },
+    "stop": {
+      "url": "https://337fd80b6bcbda91f5fef78165e7dc30.m.pipedream.net/stop",
+      "verb": "POST",
+      "useJwt": false
+    }
+  },
+  "wizardSteps": [
+    { "label": "Seleção", "key": "step1" },
+    { "label": "Confirmação", "key": "step2" }
+  ],
+  "userInterfaces": {
+    "configModal": {
+      "height": 320,
+      "width": 600,
+      "fullscreen": false
+    },
+    "runningModal": {
+      "height": 300,
+      "width": 500,
+      "fullscreen": false,
+      "url": "MY_APP_URL/running.html",
+      "title": "Monitoramento: Janela de Bloqueio"
+    },
+    "runningHover": {
+      "url": "MY_APP_URL/running.html",
+      "width": 400,
+      "height": 200
+    }
+  },
+  "schema": {
+    "arguments": {
+      "execute": {
+        "inArguments": [],
+        "outArguments": []
+      }
+    }
+  }
+}
